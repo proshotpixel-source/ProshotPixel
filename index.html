@@ -458,7 +458,7 @@
   </style>
 </head>
 <body>
-Views:<div class="views-top-left" id="counter"><i class="fas fa-bolt"></i>  <b id="viewCounterTop"></b></div>
+<div class="views-top-left" id="counter1"><i class="fas fa-bolt"></i> Views: <b id="counter"></b></div>
 <div class="page-wrapper" id="home-section">
   <div class="upper">
     <img src="https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/logo/WhatsApp Image 2026-04-03 at 20.30.png" style="background-color: white;" class="profile-pic-img" alt="Proshot Pixel">
@@ -557,8 +557,24 @@ Views:<div class="views-top-left" id="counter"><i class="fas fa-bolt"></i>  <b i
   </div>
   
   <!-- Share Section -->
-  <div class="section-container" id="share-section"><h2 class="section-header">🌊 SHARE THE MOMENT 🌊</h2><div class="copy-link-wrapper" id="copyLinkBtn"><span>https://proshotpixel-source.github.io/ProshotPixel/</span><i class="fas fa-copy"></i></div><div class="qr-code-wrapper"><img src="https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/QR/ppqr.jpeg" class="qr-code-image" alt="qr"></div><div class="shadow-buttons"><a class="shadow-button" id="shareNowBtn"><i class="fas fa-share-alt"></i>Share</a><a class="shadow-button" id="saveQrBtn"><i class="fas fa-download"></i>Save QR</a></div></div>
-  <div class="copyright-wrapper">© 2026 PROSHOT PIXEL — Maternity · Newborn · Family · Pre-Birthday</div>
+ <div class="section-container" id="share-section">
+  <h2 class="section-header">🌊 SHARE THE MOMENT 🌊</h2>
+  <div class="copy-link-wrapper" id="copyLinkBtn">
+    <span>https://proshotpixel-source.github.io/ProshotPixel/</span>
+    <i class="fas fa-copy"></i>
+  </div>
+  <div class="qr-code-wrapper">
+    <img src="https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/QR/ppqr.jpeg" class="qr-code-image" alt="qr">
+  </div>
+  <div class="shadow-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+    <a class="shadow-button" id="shareNowBtn" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px;">
+      <i class="fas fa-share-alt"></i> Share
+    </a>
+    <a class="shadow-button" id="saveQrBtn" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px;">
+      <i class="fas fa-download"></i> Save QR
+    </a>
+  </div>
+</div> <div class="copyright-wrapper">© 2026 PROSHOT PIXEL — Maternity · Newborn · Family · Pre-Birthday</div>
 </div>
 
 <div class="footer"><ul class="footer-menu"><li><a href="#home-section" class="footer-menu-link"><i class="fas fa-home footer-menu-icon"></i><span>HOME</span></a></li><li><a href="#about-us-section" class="footer-menu-link"><i class="fas fa-info-circle footer-menu-icon"></i><span>ABOUT</span></a></li><li><a href="#packages-section" class="footer-menu-link"><i class="fas fa-box-open footer-menu-icon"></i><span>PACKAGES</span></a></li><li><a href="#dresses-section" class="footer-menu-link"><i class="fas fa-tshirt footer-menu-icon"></i><span>DRESSES</span></a></li><li><a href="#reviews-section" class="footer-menu-link"><i class="fas fa-star footer-menu-icon"></i><span>REVIEWS</span></a></li><li><a href="#video-gallery-section" class="footer-menu-link"><i class="fas fa-video footer-menu-icon"></i><span>VIDEOS</span></a></li><li><a href="#links-section" class="footer-menu-link"><i class="fas fa-link footer-menu-icon"></i><span>LINKS</span></a></li><li><a href="#share-section" class="footer-menu-link"><i class="fas fa-share-alt footer-menu-icon"></i><span>SHARE</span></a></li></ul></div>
@@ -913,7 +929,7 @@ const categoryGalleries = {
   document.getElementById('copyLinkBtn')?.addEventListener('click', () => { navigator.clipboard.writeText("https://proshotpixel.electric"); alert("✨ Profile link copied ✨"); });
   document.getElementById('shareNowBtn')?.addEventListener('click', () => { if(navigator.share) navigator.share({title:'PROSHOT PIXEL', url:'https://proshotpixel.electric'}); else alert("Share this page!"); });
   document.getElementById('saveQrBtn')?.addEventListener('click', () => { const qr = document.querySelector('.qr-code-image'); if(qr) { const a = document.createElement('a'); a.href = qr.src; a.download = 'proshot_qr.png'; a.click(); } });
-  let storedViews = localStorage.getItem('proshotPixelViews'); let views = storedViews ? parseInt(storedViews) : 3842; views++; localStorage.setItem('proshotPixelViews', views); document.getElementById('viewCounterTop').innerText = views;
+  //let storedViews = localStorage.getItem('proshotPixelViews'); let views = storedViews ? parseInt(storedViews) : 0; views++; localStorage.setItem('proshotPixelViews', views); document.getElementById('viewCounterTop').innerText = views;
   
   
 
