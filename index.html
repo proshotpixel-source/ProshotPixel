@@ -458,7 +458,7 @@
   </style>
 </head>
 <body>
-<div class="views-top-left" style="visibility: hidden;"><i class="fas fa-bolt"></i> Views: <b id="viewCounterTop">3842</b></div>
+<div class="views-top-left" id="counter"><i class="fas fa-bolt"></i> Views: <b id="viewCounterTop"></b></div>
 <div class="page-wrapper" id="home-section">
   <div class="upper">
     <img src="https://d3k88l35vy59af.cloudfront.net/A208/107/1764226476070.png" class="profile-pic-img" alt="Proshot Pixel">
@@ -571,7 +571,9 @@
   <button class="modal-nav-btn next-btn" id="modalNextBtn"><i class="fas fa-chevron-right"></i></button>
 </div>
 
-<script>
+<script type="module">
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
   // Sample reviews data
   const sampleReviews = [
     {
@@ -912,6 +914,41 @@ const categoryGalleries = {
   document.getElementById('shareNowBtn')?.addEventListener('click', () => { if(navigator.share) navigator.share({title:'PROSHOT PIXEL', url:'https://proshotpixel.electric'}); else alert("Share this page!"); });
   document.getElementById('saveQrBtn')?.addEventListener('click', () => { const qr = document.querySelector('.qr-code-image'); if(qr) { const a = document.createElement('a'); a.href = qr.src; a.download = 'proshot_qr.png'; a.click(); } });
   let storedViews = localStorage.getItem('proshotPixelViews'); let views = storedViews ? parseInt(storedViews) : 3842; views++; localStorage.setItem('proshotPixelViews', views); document.getElementById('viewCounterTop').innerText = views;
+  
+  
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCbuJesRJz858WpnboAZu5TVgyJ7li8Q4A",
+  authDomain: "proshotpixel-fa9d3.firebaseapp.com",
+  projectId: "proshotpixel-fa9d3",
+  storageBucket: "proshotpixel-fa9d3.firebasestorage.app",
+  messagingSenderId: "488338657359",
+  appId: "1:488338657359:web:bd1c30b0d3061498fa1a3a",
+  databaseURL: "https://proshotpixel-fa9d3-default-rtdb.firebaseio.com"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const counterRef = ref(db, "visits");
+
+// Get current count
+get(counterRef).then((snapshot) => {
+  let count = 0;
+
+  if (snapshot.exists()) {
+    count = snapshot.val();
+  }
+
+  count++; // increase
+
+  // Save back to DB
+  set(counterRef, count);
+
+  // Show on UI
+  document.getElementById("counter").innerText = count;
+});
 </script>
+ 
 </body>
 </html>
