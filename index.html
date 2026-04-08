@@ -545,16 +545,19 @@
   
    <!-- REVIEWS SECTION (New) -->
   <div class="section-container" id="reviews-section">
-    <h2 class="section-header">⭐ CUSTOMER REVIEWS ⭐</h2>
-    <div id="reviewsContainer" class="reviews-container">
-      <div class="review-loading"><i class="fas fa-spinner fa-pulse"></i> Loading reviews...</div>
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-      <a href="https://g.page/r/CVEli6gLezMpEAE/review" target="_blank" class="give-review-btn" id="giveReviewBtn">
-        <i class="fab fa-google"></i> Write a Review on Google
-      </a>
-    </div>
+  <h2 class="section-header">⭐ CUSTOMER REVIEWS ⭐</h2>
+  <div id="reviewsContainer" class="reviews-container">
+    <div class="review-loading"><i class="fas fa-spinner fa-pulse"></i> Loading reviews...</div>
   </div>
+  <div style="display: flex; justify-content: center; gap: 16px; margin-top: 20px; flex-wrap: wrap;">
+    <a href="https://g.page/r/CVEli6gLezMpEAE/review" target="_blank" class="give-review-btn" id="giveReviewBtn">
+      <i class="fab fa-google"></i> Write a Review on Google
+    </a>
+    <a href="https://www.google.com/maps/place/Proshot+Pixel/@18.6114189,73.7996343,17z/data=!4m8!3m7!1s0x3bc2b922dc91c4f9:0x29337b0ba88b2551!8m2!3d18.6114189!4d73.8022092!9m1!1b1!16s%2Fg%2F11svkkz9dv?entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="give-review-btn" style="background: linear-gradient(95deg, #00CAFF, #0065F8);">
+      <i class="fas fa-eye"></i> Click to view more Reviews
+    </a>
+  </div>
+</div>
   
   <!-- Share Section -->
  <div class="section-container" id="share-section">
@@ -926,8 +929,8 @@ const categoryGalleries = {
   prevBtn?.addEventListener('click', showPrevImage); nextBtn?.addEventListener('click', showNextImage);
   modal?.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
   document.addEventListener('keydown', (e) => { if (modal.style.display === 'flex') { if (e.key === 'ArrowLeft') showPrevImage(); else if (e.key === 'ArrowRight') showNextImage(); else if (e.key === 'Escape') modal.style.display = 'none'; } });
-  document.getElementById('copyLinkBtn')?.addEventListener('click', () => { navigator.clipboard.writeText("https://proshotpixel.electric"); alert("✨ Profile link copied ✨"); });
-  document.getElementById('shareNowBtn')?.addEventListener('click', () => { if(navigator.share) navigator.share({title:'PROSHOT PIXEL', url:'https://proshotpixel.electric'}); else alert("Share this page!"); });
+  document.getElementById('copyLinkBtn')?.addEventListener('click', () => { navigator.clipboard.writeText("https://proshotpixel-source.github.io/ProshotPixel/"); alert("✨ Profile link copied ✨"); });
+  document.getElementById('shareNowBtn')?.addEventListener('click', () => { if(navigator.share) navigator.share({title:'PROSHOT PIXEL', url:'https://proshotpixel-source.github.io/ProshotPixel/'}); else alert("Share this page!"); });
   document.getElementById('saveQrBtn')?.addEventListener('click', () => { const qr = document.querySelector('.qr-code-image'); if(qr) { const a = document.createElement('a'); a.href = qr.src; a.download = 'proshot_qr.png'; a.click(); } });
   //let storedViews = localStorage.getItem('proshotPixelViews'); let views = storedViews ? parseInt(storedViews) : 0; views++; localStorage.setItem('proshotPixelViews', views); document.getElementById('viewCounterTop').innerText = views;
   
