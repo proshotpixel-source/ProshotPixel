@@ -50,7 +50,7 @@
       background-clip: text; -webkit-background-clip: text; color: transparent;
     }
     .firmname-underline {
-      width: 90px; height: 3px;
+        height: 3px;
       background: linear-gradient(90deg, #4300FF, #00CAFF, #00FFDE);
       margin: 8px auto; border-radius: 4px;
     }
@@ -162,6 +162,11 @@
     .addon-box { background: rgba(0,0,0,0.4); border-radius: 20px; padding: 14px; margin-top: 12px; border-left: 3px solid #00CAFF; }
     .addon-box h5 { color: #00CAFF; margin-bottom: 8px; font-size: 14px; }
     .addon-list { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: #AAC9FF; }
+    /* NEW: per-package terms & conditions box */
+    .package-terms-box { background: rgba(0,0,0,0.35); border-radius: 20px; padding: 14px; margin-top: 14px; border-left: 3px solid #00FFDE; }
+    .package-terms-box h5 { color: #00FFDE; margin-bottom: 8px; font-size: 13px; display: flex; align-items: center; gap: 6px; }
+    .package-terms-box ul { margin-left: 20px; font-size: 12px; color: #C8E4FF; }
+    .package-terms-box li { margin: 4px 0; }
     .terms-box { background: rgba(0,0,0,0.4); border-radius: 20px; padding: 16px; margin-top: 20px; border-left: 3px solid #00FFDE; }
     .terms-box h4 { color: #00CAFF; margin-bottom: 12px; }
     .terms-box ul { padding-left: 20px; }
@@ -453,18 +458,18 @@
   </style>
 </head>
 <body>
-<div class="views-top-left"><i class="fas fa-bolt"></i> Views: <b id="viewCounterTop">3842</b></div>
+<div class="views-top-left" style="visibility: hidden;"><i class="fas fa-bolt"></i> Views: <b id="viewCounterTop">3842</b></div>
 <div class="page-wrapper" id="home-section">
   <div class="upper">
     <img src="https://d3k88l35vy59af.cloudfront.net/A208/107/1764226476070.png" class="profile-pic-img" alt="Proshot Pixel">
     <div class="firmname">PROSHOT PIXEL</div>
     <div class="firmname-underline"></div>
-    <div class="name">Vrushali Patil <span>MATERNITY · NEWBORN · FAMILY</span></div>
+    <div class="name">Vrushali Patil <span style="display:block; margin-top:6px;"><i>📸 Visual Storyteller</i></span></div>
   </div>
   <div class="round-contact-buttons">
     <a href="tel:+918855003875"><i class="fas fa-phone"></i><span>Call Me</span></a>
     <a href="https://wa.me/918855003875?text=Hi%20Proshot%20Pixel"><i class="fab fa-whatsapp"></i><span>Whatsapp</span></a>
-    <a href="https://maps.app.goo.gl"><i class="fas fa-map-marker-alt"></i><span>Direction</span></a>
+     <a target="_blank" href="https://www.google.com/maps/dir//Proshot+Pixel,+Pimprigaon+Rd,+opp.+NAV+MAHARASHTRA+VIDYALAYA,+Pune"><i class="fas fa-map-marker-alt"></i><span>Direction</span></a>
     <a href="mailto:proshotpixel@gmail.com"><i class="fas fa-envelope"></i><span>Mail</span></a>
   </div>
 
@@ -472,7 +477,7 @@
   <div class="section-container">
     <h2 class="section-header">⚡ CONTACT US ⚡</h2>
     <div class="contact-info-list">
-      <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-text">Pimprigaon Rd, opp. NAV MAHARASHTRA VIDYALAYA, Pune 411017</div></div>
+      <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-text"> Pimprigaon Rd, opp. NAV MAHARASHTRA VIDYALAYA & JUNIOR COLLEGE, Shastri Nagar, Pimpri Colony, Pimpri-Chinchwad, Pune, Maharashtra 411017</div></div>
       <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div class="contact-text"><a href="mailto:proshotpixel@gmail.com">proshotpixel@gmail.com</a></div></div>
       <div class="contact-item"><div class="contact-icon"><i class="fas fa-phone"></i></div><div class="contact-text"><a href="tel:+918855003875">+91-8855003875</a></div></div>
     </div>
@@ -499,16 +504,16 @@
       <p>To make your experience seamless and complete, we also provide professional makeup and hairstyling services — ensuring you look and feel your best during your shoot.</p>
       <p>Based in Pimple Saudagar, Pimpri, we proudly offer our services across Pune and nearby areas.</p>
       <div class="why-choose-us"><h3>✨ Why Choose Us ✨</h3><ul><li>Expertise in Maternity, Baby, Newborn, Family, Model & Pre-Birthday Photography</li><li>Complete Client Satisfaction is our priority</li><li>Ethical and Transparent Business Practices</li><li>Strong Customer Relationships — We stay connected</li><li>Personalized Approach — We listen, we understand, and we provide the best solutions</li></ul></div>
-      <p><strong>We believe photography is more than just pictures — it's about preserving memories, emotions, and stories that you'll cherish forever.</strong></p>
+     <br> <p><strong>We believe photography is more than just pictures — it's about preserving memories, emotions, and stories that you'll cherish forever.</strong></p>
     </div>
   </div>
 
   <!-- EXCLUSIVE PACKAGES SECTION -->
   <div class="section-container" id="packages-section">
     <h2 class="section-header">📸 OUR EXCLUSIVE PACKAGES 📸</h2>
-    <div id="packages-container-accordion"></div>
+    
   </div>
-
+<div id="packages-container-accordion"></div>
   <!-- DRESSES SECTION -->
   <div class="section-container" id="dresses-section">
     <h2 class="section-header">👗 OUR DRESS COLLECTION 👗</h2>
@@ -518,19 +523,7 @@
     </div>
   </div>
 
-  <!-- REVIEWS SECTION (New) -->
-  <div class="section-container" id="reviews-section">
-    <h2 class="section-header">⭐ CUSTOMER REVIEWS ⭐</h2>
-	 
-    <div id="reviewsContainer" class="reviews-container">
-      <div class="review-loading"><i class="fas fa-spinner fa-pulse"></i> Loading reviews...</div>
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-      <a href="https://g.page/r/CVEli6gLezMpEAE/review" target="_blank" class="give-review-btn" id="giveReviewBtn">
-        <i class="fab fa-google"></i> Write a Review on Google
-      </a>
-    </div>
-  </div>
+ 
 
   <!-- Payment Options -->
   <div class="section-container">
@@ -541,11 +534,26 @@
       <div class="payment-item"><i class="fab fa-google-pay gpay-icon"></i><span class="payment-text">Google Pay</span><span class="payment-number">+91-8855003875</span></div>
     </div>
   </div>
+  
+  
 
   <!-- Video Gallery Section -->
   <div class="section-container" id="video-gallery-section">
     <h2 class="section-header">🎬 VIDEO GALLERY 🎬</h2>
     <div class="video-gallery-grid" id="videoGalleryGrid"></div>
+  </div>
+  
+   <!-- REVIEWS SECTION (New) -->
+  <div class="section-container" id="reviews-section">
+    <h2 class="section-header">⭐ CUSTOMER REVIEWS ⭐</h2>
+    <div id="reviewsContainer" class="reviews-container">
+      <div class="review-loading"><i class="fas fa-spinner fa-pulse"></i> Loading reviews...</div>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://g.page/r/CVEli6gLezMpEAE/review" target="_blank" class="give-review-btn" id="giveReviewBtn">
+        <i class="fab fa-google"></i> Write a Review on Google
+      </a>
+    </div>
   </div>
   
   <!-- Share Section -->
@@ -564,9 +572,7 @@
 </div>
 
 <script>
-  // Sample reviews data (these would normally come from Google Places API)
-  // Since the actual Google search page can't be scraped directly, we're using sample reviews
-  // with a note that they're from Google. The "Write a Review" button links to the actual Google review page.
+  // Sample reviews data
   const sampleReviews = [
     {
       name: "Niketa Bagul",
@@ -601,38 +607,20 @@
   function renderReviews() {
     const container = document.getElementById('reviewsContainer');
     if (!container) return;
-    
-    container.innerHTML = `
-      <div class="google-rating-badge">
-        <i class="fab fa-google"></i>
-        <span>Google Rating: <span class="avg-rating">5.0</span> ⭐ (Based on Google Reviews)</span>
-      </div>
-    `;
-    
+    container.innerHTML = `<div class="google-rating-badge"><i class="fab fa-google"></i><span>Google Rating: <span class="avg-rating">5.0</span> ⭐ (Based on Google Reviews)</span></div>`;
     sampleReviews.forEach(review => {
       const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
-      const reviewCard = document.createElement('div');
-      reviewCard.className = 'review-card';
-      reviewCard.innerHTML = `
-        <div class="review-header">
-          <span class="reviewer-name">${review.name}</span>
-          <span class="review-rating">${stars}</span>
-          <span class="review-date">${review.date}</span>
-        </div>
-        <div class="review-text">"${review.text}"</div>
-        <div class="review-source"><i class="fab fa-google"></i> ${review.source} Review</div>
-      `;
+      const reviewCard = document.createElement('div'); reviewCard.className = 'review-card';
+      reviewCard.innerHTML = `<div class="review-header"><span class="reviewer-name">${review.name}</span><span class="review-rating">${stars}</span></div><div class="review-text">"${review.text}"</div><div class="review-source"><i class="fab fa-google"></i> ${review.source} Review</div>`;
       container.appendChild(reviewCard);
     });
   }
 
-  // Dress images data
   const dressImages = [
     { url: "https://instagram.fpnq7-8.fna.fbcdn.net/v/t51.82787-15/652085476_17879358489529268_3029885741414311064_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=Mzg1NDE2Nzg0MTkzOTY2NTc4NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=Zl1AZXzJRQgQ7kNvwFBF1H3&_nc_oc=AdptUDdj1BwE901FB5K1S6lwRrr6FflDMHjDl48ZWrF0nyeGZeMruxyBx0VzrwaSHWIfektucxSpmY228pIFKggO&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=instagram.fpnq7-8.fna&_nc_gid=kOMlPUIszm1iyP7WQKzskg&_nc_ss=7a32e&oh=00_AfxqIy8H0b3gEvHw_vYyfouSfCX2BIhoqEsBTk6S74-U7A&oe=69D1C762", color: "Elegant Ivory Gown" },
     { url: "https://instagram.fpnq7-5.fna.fbcdn.net/v/t51.82787-15/651428119_17879358114529268_6110855990635002368_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzg1NDE2NjkxMzgyNDA5NDYwMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=gG-n0s1k9eEQ7kNvwGIVDge&_nc_oc=Adoy6whhqdV48lCCiEgDveriX_Z0v9ypgKg1LoBIKCn5-jFUQx5tx7l_FwDmwpKOzf23fm3Ej9yc-SvuhtQTeG32&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=instagram.fpnq7-5.fna&_nc_gid=kOMlPUIszm1iyP7WQKzskg&_nc_ss=7a32e&oh=00_AfyT2HLO-DkVQxnpCSGzwR-UdWST0MzUugdlOvDnete7Xw&oe=69D1E38F", color: "Blush Pink Perfection" },
     { url: "https://instagram.fpnq7-8.fna.fbcdn.net/v/t51.82787-15/626256361_17982277868952922_4651993894953167195_n.webp?_nc_cat=100&ig_cache_key=MzgyNjMzOTcyNDE1MTg5MzAxNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0Mzl4OTU5LnNkci5DMyJ9&_nc_ohc=9PhZYRvZmcUQ7kNvwEoCW5_&_nc_oc=AdqyMplT96H04zqxRn1er3sbZtuSMBpAXKW6wvGtXzwUsQgVY5IYQfKiN8LR1-NraYfUKuKgcCbQwgRsXM977EuR&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=instagram.fpnq7-8.fna&_nc_gid=8SafPo0Zg2d0ecl6C5WG1g&_nc_ss=7a32e&oh=00_AfxM6ImWvP9FFgkR7G8AFOf0cgvbJCljdYGgWzvqtJm-aQ&oe=69D1DFB8", color: "Royal Blue Elegance" }
   ];
-
   let allGalleryImages = [];
   let currentImageIndex = 0;
 
@@ -641,8 +629,7 @@
     if (!container) return;
     container.innerHTML = '';
     dressImages.forEach((dress) => {
-      const card = document.createElement('div');
-      card.className = 'dress-card';
+      const card = document.createElement('div'); card.className = 'dress-card';
       card.innerHTML = `<img src="${dress.url}" class="dress-image" alt="Dress"><div class="dress-info"><div class="dress-color">${dress.color}</div></div>`;
       const globalIndex = allGalleryImages.length;
       allGalleryImages.push({ url: dress.url, color: dress.color });
@@ -655,208 +642,203 @@
       container.appendChild(card);
     });
   }
+  function buildVideoGallery() { const container = document.getElementById('videoGalleryGrid'); if(container) container.innerHTML = '<div class="no-reviews"><i class="fas fa-video"></i> Video files will appear here.</div>'; }
 
-  function buildVideoGallery() {
-    const container = document.getElementById('videoGalleryGrid');
-    if (!container) return;
-    container.innerHTML = '<div class="no-reviews"><i class="fas fa-video"></i> Video files will appear here. Please add videos to the video folder.</div>';
-  }
-
- // Category-specific gallery images (provided URLs)
+  // Category-specific gallery images (provided URLs)
 const categoryGalleries = {
     maternity: [
-     "https://iili.io/BYQrlfa.png",
-"https://iili.io/BYQr00J.png",
-"https://iili.io/BYQrL0b.png",
-"https://iili.io/BYQ4qep.png",
-"https://iili.io/BYQ4xLX.png",
-"https://iili.io/BYQ4iTN.png",
-"https://iili.io/BYQ4D4s.png",
-"https://iili.io/BYQ62Z7.png",
-"https://iili.io/BYQ6Fn9.png",
-"https://iili.io/BYQ6acJ.png",
-"https://iili.io/BYQ6WMX.png",
-"https://iili.io/BYQ6Uo7.png",
-"https://iili.io/BYQ6boP.png",
-"https://iili.io/BYQPOqF.png",
-"https://iili.io/BYQPUeR.png",
-"https://iili.io/BYQPkga.png",
-"https://iili.io/BYQP4zN.png",
-"https://iili.io/BYQPmml.png",
-"https://iili.io/BYQiW2s.png",
-"https://iili.io/BYQisjV.png",
-"https://iili.io/BYQiLZB.png",
-"https://iili.io/BYQiy8J.png",
-"https://iili.io/BYQsx9f.png",
-"https://iili.io/BYQs1Ax.png",
-"https://iili.io/BYQsPln.png",
-"https://iili.io/BYQLCiP.png",
-"https://iili.io/BYQLVef.png",
-"https://iili.io/BYQLbkJ.png",
-"https://iili.io/BYQQf7s.png",
-"https://iili.io/BYQQGEP.png",
-"https://iili.io/BYQQeQp.png",
-"https://iili.io/BYQQpae.png",
-"https://iili.io/BYQZAnp.png",
-"https://iili.io/BYQZjK7.png",
-"https://iili.io/BYQtCs2.png",
-"https://iili.io/BYQtofS.png",
-"https://iili.io/BYQtlqB.png",
-"https://iili.io/BYQtzg9.png",
-"https://iili.io/BYZnPQp.png",
-"https://iili.io/BYbJzhP.png",
-"https://iili.io/BYbJIQ1.png",
-"https://iili.io/BYbJ73J.png",
-"https://iili.io/BYbJR4a.png",
-"https://iili.io/BYbJcpp.png",
-"https://iili.io/BYbJEQt.png",
-"https://iili.io/BYbJMCX.png",
-"https://iili.io/BYbJh3G.png",
-"https://iili.io/BYbJjaf.png",
-"https://iili.io/BYbJkjS.png",
-"https://iili.io/BYbJUGe.png",
-"https://iili.io/BYbJvZ7.png",
-"https://iili.io/BYbJ43b.png",
-"https://iili.io/BYbJLuV.png",
-"https://iili.io/BYbJm6g.png",
-"https://iili.io/BYbJbMF.png",
-"https://iili.io/BYbdd9R.png",
-"https://iili.io/BYbdfnt.png",
-"https://iili.io/BYbdocG.png",
-"https://iili.io/BYbdxSf.png",
-"https://iili.io/BYbdYPe.png",
-"https://iili.io/BYbdcKu.png",
-"https://iili.io/BYbdEHx.png",
-"https://iili.io/BYbdMNV.png",
-"https://iili.io/BYbdeUJ.png",
-"https://iili.io/BYbdSNp.png",
-"https://iili.io/BYbdUDN.png",
-"https://iili.io/BYbdrxI.png",
-"https://iili.io/BYbd6iX.png",
-"https://iili.io/BYbdsls.png",
-"https://iili.io/BYbdtR4.png",
-"https://iili.io/BYbdZJf.png",
-"https://iili.io/BYbdpxS.png",
-"https://iili.io/BYb2d0u.png",
-"https://iili.io/BYb22Ub.png" ],
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (1).jpeg", 
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (1).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (1).png",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (1).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (10).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (11).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (12).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (13).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (14).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (15).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (16).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (17).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (18).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (19).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (2).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (20).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (21).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (22).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (23).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (24).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (25).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (26).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (27).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (28).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (29).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (3).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (30).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (31).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (32).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (33).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (34).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (35).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (36).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (36).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (37).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (38).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (39).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (4).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (40).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (41).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (42).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (43).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (44).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (45).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (46).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (47).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (48).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (49).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (5).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (50).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (51).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (52).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (53).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (54).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (55).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (56).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (57).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (58).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (59).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (6).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (60).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (61).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (62).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (63).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (64).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (65).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (66).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (67).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (68).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (69).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (7).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (70).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (8).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/maternity/1 (9).jpg" ],
     newborn: [
-     "https://iili.io/BYb8gcb.png",
-"https://iili.io/BYb88Pe.png",
-"https://iili.io/BYb86Hx.png",
-"https://iili.io/BYb8rSj.png",
-"https://iili.io/BYb8PAQ.png",
-"https://iili.io/BYbSEbV.png",
-"https://iili.io/BYbSQe4.png",
-"https://iili.io/BYb4XTv.png",
-"https://iili.io/BYb4fI4.png",
-"https://iili.io/BYb45Tx.png",
-"https://iili.io/BYb4ukb.png",
-"https://iili.io/BYb4NCN.png",
-"https://iili.io/BYb4ZF9.png",
-"https://iili.io/BYb6RcX.png",
-"https://iili.io/BYb6IMN.png",
-"https://iili.io/BYb6Y9s.png",
-"https://iili.io/BYb61ol.png",
-"https://iili.io/BYb6koQ.png",
-"https://iili.io/BYb6mlt.png",
-"https://iili.io/BYbPMzv.png",
-"https://iili.io/BYbPY0P.png",
-"https://iili.io/BYbPWsp.png",
-"https://iili.io/BYbPOdX.png",
-"https://iili.io/BYbPUX4.png",
-"https://iili.io/BYbP4B2.png",
-"https://iili.io/BYbPPr7.png",
-"https://iili.io/BYbPDIj.png",
-"https://iili.io/BYbiFpa.png",
-"https://iili.io/BYbioEN.png",
-"https://iili.io/BYbiVyu.png",
-"https://iili.io/BYbiGa9.png",
-"https://iili.io/BYbihjj.png",
-"https://iili.io/BYbi8a1.png",
-"https://iili.io/BYbiinR.png"
+     
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (1).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (1).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (10).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (11).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (12).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (13).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (14).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (15).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (16).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (17).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (18).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (19).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (2).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (2).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (20).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (21).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (22).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (23).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (24).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (25).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (26).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (27).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (3).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (3).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (30).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (31).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (4).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (4).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (5).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (6).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (6).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (7).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (8).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/newborn/1 (9).jpg"
     ],
     family: [
-  "https://iili.io/BYbBI1I.png",
-"https://iili.io/BYbBfea.png",
-"https://iili.io/BYbBvEB.png",
-"https://iili.io/BYbBCzv.png",
-"https://iili.io/BYbBXku.png",
-"https://iili.io/BYbCMnR.png",
-"https://iili.io/BYbCVGp.png",
-"https://iili.io/BYbChFI.png",
-"https://iili.io/BYbC1wJ.png",
-"https://iili.io/BYbnFDJ.png",
-"https://iili.io/BYbnBPp.png",
-"https://iili.io/BYbnllS.png",
-"https://iili.io/BYbn0U7.png",
-"https://iili.io/BYbnpzG.png",
-"https://iili.io/BYbod12.png",
-"https://iili.io/BYboFd7.png"  ],
+ "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (1).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (10).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (11).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (12).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (13).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (14).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (15).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (16).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (2).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (3).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (4).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (5).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (6).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (7).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (8).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/family/1 (9).jpg"  ],
     prebirthday: [
-  "https://iili.io/BYb5FDP.png",
-"https://iili.io/BYb5nfa.png",
-"https://iili.io/BYb5Big.png",
-"https://iili.io/BYb5fx1.png",
-"https://iili.io/BYb5uON.png",
-"https://iili.io/BYb5AbI.png",
-"https://iili.io/BYb55xt.png",
-"https://iili.io/BYb5Xz7.png",
-"https://iili.io/BYbYyfn.png",
-"https://iili.io/BYbYQNp.png",
-"https://iili.io/BYbYUV1.png",
-"https://iili.io/BYbY6la.png",
-"https://iili.io/BYbaiB9.png",
-"https://iili.io/BYbcXvj.png",
-"https://iili.io/BYbcvG1.png",
-"https://iili.io/BYbcijp.png",
-"https://iili.io/BYbct6X.png",
-"https://iili.io/BYblaSa.png",
-"https://iili.io/BYblo9j.png",
-"https://iili.io/BYblMoN.png",
-"https://iili.io/BYblVVI.png",
-"https://iili.io/BYblwSs.png",
-"https://iili.io/BYb0O11.png",
-"https://iili.io/BYb0hXV.png",
-"https://iili.io/BYb0SkJ.png",
-"https://iili.io/BYb0rIR.png",
-"https://iili.io/BYb11CN.png",
-"https://iili.io/BYb1kn2.png",
-"https://iili.io/BYb1sZQ.png",
-"https://iili.io/BYbEdtR.png",
-"https://iili.io/BYbE0Ab.png",
-"https://iili.io/BYbEUVp.png",
-"https://iili.io/BYbMJBp.png",
-"https://iili.io/BYbMIG2.png",
-"https://iili.io/BYbM7yu.png",
-"https://iili.io/BYbM1CQ.png",
-"https://iili.io/BYbMOZv.png",
-"https://iili.io/BYbMtP2.png",
-"https://iili.io/BYbXwue.png",
-"https://iili.io/BYbXzCv.png",
-"https://iili.io/BYbXknj.png",
-"https://iili.io/BYbXPAF.png",
-"https://iili.io/BYbh99t.png",
-"https://iili.io/BYbhIDu.png",
-"https://iili.io/BYbN60v.png",
-"https://iili.io/BYbOIdQ.png"   ]
+  "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (1).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (1).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (3).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (2).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (4).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (16).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (6).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (10).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (11).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (12).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (13).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (14).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (15).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (17).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (18).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (19).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (2).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (20).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (21).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (22).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (23).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (24).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (25).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (26).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (27).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (28).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (29).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (3).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (30).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (31).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (32).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (33).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (34).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (35).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (36).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (37).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (38).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (39).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (4).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (5).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (5).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (6).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (7).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (7).webp",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (8).jpg",
+"https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/kids/1 (9).jpg" ]
   };
-
   const categoriesData = [
     { id: "maternity", title: "🤰 Maternity Photoshoot", icon: "fas fa-mother", packages: [
-      { name: "Standard (Indoor Photoshoot)", price: "₹3,000", duration: "<strong>⏱️ Session Duration</strong> :<strong> 1 Hour </strong>of Professional Photography", outfit: "<strong>👗 Outfits </strong>: <strong>1 Premium Western Gown</strong> Curated & Provided by Us", images: "<strong>10 </strong>High-End Retouched Soft Copies only", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","Premium Western Gowns Available", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"] , addons: [ "➕ Extra Mom Outfit: ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000"]},
-      { name: "Basic (Indoor Photoshoot)", price: "₹5,200", duration: "<strong>⏱️ Session Duration </strong>: <strong> 2 Hour </strong> Hours of Professional Photography" , outfit: "<strong>👗 Outfits : </strong>2 Changes Allowed <br> <ul style='margin-left: 30px; margin-top: 2px; '>Choose any of following options:<li>Choose both gowns from our collection</li> <li> 1 of your outfit + 1 gown from us</li> <li> both outfits from your side</li></ul>", images: "<strong>20 </strong> High-End Retouched Soft Copies only", features: ["Makeup & Hairstyling Included for Mom-to-Be", "Premium Western Gowns Available", "High-Resolution Soft Copies", "Guided Posing & Styling Assistance"], addons: [ "➕ Extra Mom Outfit: ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000"] },
-      { name: "Premium (Indoor Photoshoot)", price: "₹7,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 3 Hour </strong>", outfit: "<strong>👗 Outfits : </strong>3 Changes (2 Premium Western Gowns from Us + 1 Outfit from Your Side)", images: "<strong>25 </strong> High-End Retouched Soft Copies only <br>📖 Premium Photobook Album with <strong>20 </strong> Edited Photos (Your Choice)", features: ["Makeup & Hairstyling Included for Mom-to-Be", "Premium Photobook", "Premium Western Gowns Available","High-Resolution Soft Copies", "Guided Posing & Styling Assistance"], addons: [ "➕ Extra Mom Outfit: ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000"] }
+      { name: "Standard (Indoor Photoshoot)", price: "₹3,000", duration: "<strong>⏱️ Session Duration</strong> :<strong> 1 Hour </strong>of Professional Photography", outfit: "<strong>👗 Outfits </strong>: <strong>1 Premium Western Gown</strong> Curated & Provided by Us", images: "<strong>10 </strong>High-End Retouched Soft Copies only", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","Premium Western Gowns Available", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"] , addons: [ "➕ Extra Mom Outfit: ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"]},
+      { name: "Basic (Indoor Photoshoot)", price: "₹5,200", duration: "<strong>⏱️ Session Duration </strong>: <strong> 2 Hour </strong> Hours of Professional Photography" , outfit: "<strong>👗 Outfits : </strong>2 Changes Allowed <br> <ul style='margin-left: 30px; margin-top: 2px; '>Choose any of following options:<li>Choose both gowns from our collection</li> <li> 1 of your outfit + 1 gown from us</li> <li> both outfits from your side</li></ul>", images: "<strong>20 </strong> High-End Retouched Soft Copies only", features: ["Makeup & Hairstyling Included for Mom-to-Be", "Premium Western Gowns Available", "High-Resolution Soft Copies", "Guided Posing & Styling Assistance"], addons: [ "➕ Extra Mom Outfit: ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] },
+      { name: "Premium (Indoor Photoshoot)", price: "₹7,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 3 Hour </strong>", outfit: "<strong>👗 Outfits : </strong>3 Changes (2 Premium Western Gowns from Us + 1 Outfit from Your Side)", images: "<strong>25 </strong> High-End Retouched Soft Copies only <br>📖 Premium Photobook Album with <strong>20 </strong> Edited Photos (Your Choice)", features: ["Makeup & Hairstyling Included for Mom-to-Be", "Premium Photobook", "Premium Western Gowns Available","High-Resolution Soft Copies", "Guided Posing & Styling Assistance"], addons: [ "➕ Extra Mom Outfit: ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] }
     ]},
     { id: "newborn", title: " Newborn Photoshoot", icon: "fas fa-baby", packages: [
-      { name: "Baby Bliss Package", price: "₹6,000", duration: "<strong>⏱️ Session Duration : </strong><strong> 1 Hour </strong>of Professional Photography", outfit: "✅ <strong>Included</strong> : All Props, Outfits & Wraps", images: "<strong>15 </strong> High-End Retouched Soft Copies", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","2 Premium Themed Setups", "Family Photos Included", "Guided Posing & Styling Assistance", "All props & wraps provided"], addons: ["➕ Home Visit: ₹2,000", "➕ Mom Outfit: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Reel: ₹1000"] }
+      { name: "Baby Bliss Package", price: "₹6,000", duration: "<strong>⏱️ Session Duration : </strong><strong> 1 Hour </strong>of Professional Photography", outfit: "✅ <strong>Included</strong> : All Props, Outfits & Wraps", images: "<strong>15 </strong> High-End Retouched Soft Copies", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","2 Premium Themed Setups", "Family Photos Included", "Guided Posing & Styling Assistance", "All props & wraps provided"], addons: ["➕ Home Visit: ₹2,000", "➕ Mom Outfit: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] }
     ]},
     { id: "family", title: " Family Photoshoot", icon: "fas fa-users", packages: [
-      { name: "Family Photoshoot Package", price: "₹4,000", duration: "️<strong>⏱️ Session Duration </strong>:<strong> 1 Hour </strong>of Professional Photography", outfit: "<strong>👗 Outfits </strong>: <strong>2</strong> Changes Allowed", images: "<strong>20 </strong> High-End Retouched Soft Copies only", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","Exclusive Family Photoshoot Experience", "Guided Posing & Styling Assistance", "High-Resolution Soft Copies"], addons: [ "➕ Extra Outfit(Gown only): ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle: ₹1,200", "➕ Reel: ₹1000"] }
+      { name: "Family Photoshoot Package", price: "₹4,000", duration: "️<strong>⏱️ Session Duration </strong>:<strong> 1 Hour </strong>of Professional Photography", outfit: "<strong>👗 Outfits </strong>: <strong>2</strong> Changes Allowed", images: "<strong>20 </strong> High-End Retouched Soft Copies only", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","Exclusive Family Photoshoot Experience", "Guided Posing & Styling Assistance", "High-Resolution Soft Copies"], addons: [ "➕ Extra Outfit(Gown only): ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle: ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] }
     ]},
     { id: "prebirthday", title: " Pre-Birthday Photoshoot", icon: "fas fa-birthday-cake", packages: [
-      { name: "Sweet Start (Indoor)", price: "₹4,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 1 Hour </strong>of Professional Photography", outfit: "🛠 1 Themed Setup", images: "<strong>15</strong> High-End Retouched Images", features: ["Make-up,Hairstyle,Gown for Mom & Reel are <strong>Not</strong> Included","Baby Solo + Family Photos", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"], addons: [ "➕ Mom Outfit: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Reel: ₹1000"] },
-      { name: "Little Star (Indoor)", price: "₹5,500", duration: "<strong>⏱️ Session Duration </strong>: <strong> 1 Hour </strong>of Professional Photography", outfit: "🛠 2–3 Themed Setups",  images: "<strong>20</strong> High-End Retouched Images", features: ["Make-up,Hairstyle & Gown for Mom  are <strong>Not</strong> Included","Baby Solo + Family Photos + 1 Cinematic Reel","Themed Setups", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"] , addons: [ "➕ Mom Outfit: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600"]},
-      { name: "Grand Celebration (Indoor + Outdoor)", price: "₹7,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 3 Hour </strong> of Professional Photography", outfit: "🛠 Setups (2 Indoor + 1 Outdoor)",  images: "<strong>30</strong> High-End Retouched Images", features: ["Make-up,Hairstyle & Gown for Mom are <strong>Not</strong> Included","Baby Solo + Family Photos + 1 Cinematic Reel","Themed Setups", "High-Resolution Soft Copies","Indoor + Outdoor Garden Shoot",   "Guided Posing & Styling Assistance"], addons: ["➕ Mom Gown: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "📌 Outdoor Garden Charges: ₹300–500 approx. (by client)", "🎁 Complimentary for Previous Clients: Mom Gown / Family Reel / Hairstyle"] }
+      { name: "Sweet Start (Indoor)", price: "₹4,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 1 Hour </strong>of Professional Photography", outfit: "🛠 1 Themed Setup", images: "<strong>15</strong> High-End Retouched Images", features: ["Make-up,Hairstyle,Gown for Mom & Reel are <strong>Not</strong> Included","Baby Solo + Family Photos", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"], addons: [ "➕ Mom Outfit: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] },
+      { name: "Little Star (Indoor)", price: "₹5,500", duration: "<strong>⏱️ Session Duration </strong>: <strong> 1 Hour </strong>of Professional Photography", outfit: "🛠 2–3 Themed Setups",  images: "<strong>20</strong> High-End Retouched Images", features: ["Make-up,Hairstyle & Gown for Mom  are <strong>Not</strong> Included","Baby Solo + Family Photos + 1 Cinematic Reel","Themed Setups", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"] , addons: [ "➕ Mom Outfit: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Saree Drapping: ₹200"]},
+      { name: "Grand Celebration (Indoor + Outdoor)", price: "₹7,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 3 Hour </strong> of Professional Photography", outfit: "🛠 Setups (2 Indoor + 1 Outdoor)",  images: "<strong>30</strong> High-End Retouched Images", features: ["Make-up,Hairstyle & Gown for Mom are <strong>Not</strong> Included","Baby Solo + Family Photos + 1 Cinematic Reel","Themed Setups", "High-Resolution Soft Copies","Indoor + Outdoor Garden Shoot",   "Guided Posing & Styling Assistance"], addons: ["➕ Mom Gown: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Saree Drapping: ₹200", "➕ Hairstyle Only: ₹600", "📌 Outdoor Garden Charges: ₹300–500 approx. (by client)", "🎁 Complimentary for Previous Clients: Mom Gown / Family Reel / Hairstyle"] }
     ]}
   ];
 
@@ -865,50 +847,37 @@ const categoryGalleries = {
     if (!container) return;
     container.innerHTML = '';
     categoriesData.forEach((cat, idx) => {
-      const accordionDiv = document.createElement('div');
-      accordionDiv.className = 'accordion-category';
-      const header = document.createElement('div');
-      header.className = 'accordion-header';
+      const accordionDiv = document.createElement('div'); accordionDiv.className = 'accordion-category';
+      const header = document.createElement('div'); header.className = 'accordion-header';
       header.innerHTML = `<div class="category-title-wrap"><i class="${cat.icon}"></i><h3>${cat.title}</h3></div><div class="accordion-toggle-icon"><i class="fas fa-chevron-down"></i></div>`;
-      const contentDiv = document.createElement('div');
-      contentDiv.className = 'accordion-content-packages';
-      const gridDiv = document.createElement('div');
-      gridDiv.className = 'package-grid-inside';
+      const contentDiv = document.createElement('div'); contentDiv.className = 'accordion-content-packages';
+      const gridDiv = document.createElement('div'); gridDiv.className = 'package-grid-inside';
       cat.packages.forEach(pkg => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
+        const card = document.createElement('div'); card.className = 'product-card';
         let featuresHtml = `<ul class="feature-list">${pkg.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
-        let addonHtml = pkg.addons ? `<div class="addon-box"><h5>➕ Add-Ons(Extra)</h5><div class="addon-list">${pkg.addons.map(a => `<span>${a}</span>`).join(' · ')}</div></div>` : '';
+        let addonHtml = pkg.addons ? `<div class="addon-box"><h5>➕ Add-Ons (Extra)</h5><div class="addon-list">${pkg.addons.map(a => `<span>${a}</span>`).join('  ')}</div></div>` : '';
+        // NEW: per-package terms & conditions
+        const pkgTermsHtml = `<div class="package-terms-box"><h5><i class="fas fa-file-contract"></i> Package Terms</h5><ul><li>A 30% advance payment is required to confirm your booking. The remaining amount must be paid immediately after the photoshoot.</li><li>All raw copies will be shared on the same day via Cloud or Pen Drive, upon completion of the remaining payment.</li><li>Final edited images will be delivered within 10 days after photo selection.</li><li>All required props will be provided by us.</li><li>Some edited photographs may include our official watermark.</li></ul></div>`;
         card.innerHTML = `
           <h3 class="card-title">✨ ${pkg.name}</h3>
-          <div class="product-description"><strong></strong> ${pkg.duration}<br><strong></strong> ${pkg.outfit}<br><strong>🖼️ Deliverables :</strong> ${pkg.images}</div>
-          ${featuresHtml}${addonHtml}
+          <div class="product-description"><strong>${pkg.duration}</strong><br><strong>${pkg.outfit}</strong><br><strong>🖼️ Deliverables :</strong> ${pkg.images}</div>
+          ${featuresHtml}${addonHtml}${pkgTermsHtml}
           <div class="product-enquiry-section"><div class="package-price">${pkg.price}</div><button class="product-enquiry-btn book-btn" data-pkg="${pkg.name} (${cat.title})"><i class="fab fa-whatsapp"></i> Enquire / Book</button></div>
         `;
         gridDiv.appendChild(card);
       });
-      const galleryDiv = document.createElement('div');
-      galleryDiv.className = 'category-gallery';
+      const galleryDiv = document.createElement('div'); galleryDiv.className = 'category-gallery';
       galleryDiv.innerHTML = `<h4><i class="fas fa-images"></i> ${cat.title} Gallery</h4><div class="category-gallery-grid" id="gallery-${cat.id}"></div>`;
-      contentDiv.appendChild(gridDiv);
-      contentDiv.appendChild(galleryDiv);
-      accordionDiv.appendChild(header);
-      accordionDiv.appendChild(contentDiv);
+      contentDiv.appendChild(gridDiv); contentDiv.appendChild(galleryDiv);
+      accordionDiv.appendChild(header); accordionDiv.appendChild(contentDiv);
       container.appendChild(accordionDiv);
       const galleryContainer = document.getElementById(`gallery-${cat.id}`);
       if (galleryContainer && categoryGalleries[cat.id]) {
         categoryGalleries[cat.id].forEach((url) => {
-          const img = document.createElement('img');
-          img.src = url;
-          img.className = 'category-gallery-img';
+          const img = document.createElement('img'); img.src = url; img.className = 'category-gallery-img';
           const globalIndex = allGalleryImages.length;
           allGalleryImages.push({ url: url });
-          img.onclick = () => {
-            currentImageIndex = globalIndex;
-            document.getElementById('modalImg').src = url;
-            document.getElementById('modalCaption').innerText = '';
-            document.getElementById('imageModal').style.display = 'flex';
-          };
+          img.onclick = () => { currentImageIndex = globalIndex; document.getElementById('modalImg').src = url; document.getElementById('modalCaption').innerText = ''; document.getElementById('imageModal').style.display = 'flex'; };
           galleryContainer.appendChild(img);
         });
       }
@@ -920,10 +889,9 @@ const categoryGalleries = {
       });
       if (idx === 0) { contentDiv.classList.add('open'); toggleIcon.style.transform = 'rotate(180deg)'; }
     });
-    const termsDiv = document.createElement('div');
-    termsDiv.className = 'terms-box';
-    termsDiv.innerHTML = `<h4>📌 Terms & Conditions</h4><ul><li>30% advance required for booking</li><li>Raw copies shared same day</li><li>Edited images delivered within 10 days</li><li>Props provided by us</li></ul>`;
-    container.appendChild(termsDiv);
+    const termsDiv = document.createElement('div'); termsDiv.className = 'terms-box';
+    termsDiv.innerHTML = `<h4>📌 General Terms & Conditions</h4><ul><li>A 30% advance payment is required to confirm your booking. The remaining amount must be paid immediately after the photoshoot.</li><li>All raw copies will be shared on the same day via Cloud or Pen Drive, upon completion of the remaining payment.</li><li>Final edited images will be delivered within 10 days after photo selection.</li><li>All required props will be provided by us.</li></ul>`;
+    //container.appendChild(termsDiv);
   }
   
   buildCollapsiblePackages();
@@ -931,63 +899,19 @@ const categoryGalleries = {
   buildVideoGallery();
   renderReviews();
 
-  // PDF Download
-  document.getElementById('downloadDressPdfBtn')?.addEventListener('click', () => {
-    const pdfPath = './pdf/Proshot-Pixel-Outfits.pdf';
-    const link = document.createElement('a');
-    link.href = pdfPath;
-    link.download = 'Proshot-Pixel-Outfits.pdf';
-    link.click();
-  });
-
-  function showPrevImage() {
-    if (allGalleryImages.length === 0) return;
-    currentImageIndex = (currentImageIndex - 1 + allGalleryImages.length) % allGalleryImages.length;
-    document.getElementById('modalImg').src = allGalleryImages[currentImageIndex].url;
-    const dress = dressImages.find(d => d.url === allGalleryImages[currentImageIndex].url);
-    document.getElementById('modalCaption').innerText = dress ? dress.color : '';
-  }
-  function showNextImage() {
-    if (allGalleryImages.length === 0) return;
-    currentImageIndex = (currentImageIndex + 1) % allGalleryImages.length;
-    document.getElementById('modalImg').src = allGalleryImages[currentImageIndex].url;
-    const dress = dressImages.find(d => d.url === allGalleryImages[currentImageIndex].url);
-    document.getElementById('modalCaption').innerText = dress ? dress.color : '';
-  }
-
-  document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('book-btn') || e.target.closest('.book-btn')) {
-      const btn = e.target.closest('.book-btn');
-      const pkgName = btn.getAttribute('data-pkg') || "Photoshoot Package";
-      window.open(`https://wa.me/918855003875?text=Hi%20Proshot%20Pixel!%20I'm%20interested%20in%20${encodeURIComponent(pkgName)}.`, '_blank');
-    }
-  });
-
-  const modal = document.getElementById('imageModal');
-  const closeBtn = document.querySelector('#imageModal .close');
-  const prevBtn = document.getElementById('modalPrevBtn');
-  const nextBtn = document.getElementById('modalNextBtn');
+  document.getElementById('downloadDressPdfBtn')?.addEventListener('click', () => { const link = document.createElement('a'); link.href = './pdf/Proshot-Pixel-Outfits.pdf'; link.download = 'Proshot-Pixel-Outfits.pdf'; link.click(); });
+  function showPrevImage() { if (allGalleryImages.length) { currentImageIndex = (currentImageIndex - 1 + allGalleryImages.length) % allGalleryImages.length; document.getElementById('modalImg').src = allGalleryImages[currentImageIndex].url; const dress = dressImages.find(d => d.url === allGalleryImages[currentImageIndex].url); document.getElementById('modalCaption').innerText = dress ? dress.color : ''; } }
+  function showNextImage() { if (allGalleryImages.length) { currentImageIndex = (currentImageIndex + 1) % allGalleryImages.length; document.getElementById('modalImg').src = allGalleryImages[currentImageIndex].url; const dress = dressImages.find(d => d.url === allGalleryImages[currentImageIndex].url); document.getElementById('modalCaption').innerText = dress ? dress.color : ''; } }
+  document.addEventListener('click', (e) => { if (e.target.classList.contains('book-btn') || e.target.closest('.book-btn')) { const btn = e.target.closest('.book-btn'); const pkgName = btn.getAttribute('data-pkg') || "Photoshoot Package"; window.open(`https://wa.me/918855003875?text=Hi%20Proshot%20Pixel!%20I'm%20interested%20in%20${encodeURIComponent(pkgName)}.`, '_blank'); } });
+  const modal = document.getElementById('imageModal'); const closeBtn = document.querySelector('#imageModal .close'); const prevBtn = document.getElementById('modalPrevBtn'); const nextBtn = document.getElementById('modalNextBtn');
   closeBtn?.addEventListener('click', () => { modal.style.display = 'none'; });
-  prevBtn?.addEventListener('click', showPrevImage);
-  nextBtn?.addEventListener('click', showNextImage);
+  prevBtn?.addEventListener('click', showPrevImage); nextBtn?.addEventListener('click', showNextImage);
   modal?.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
-  document.addEventListener('keydown', (e) => {
-    if (modal.style.display === 'flex') {
-      if (e.key === 'ArrowLeft') showPrevImage();
-      else if (e.key === 'ArrowRight') showNextImage();
-      else if (e.key === 'Escape') modal.style.display = 'none';
-    }
-  });
-
+  document.addEventListener('keydown', (e) => { if (modal.style.display === 'flex') { if (e.key === 'ArrowLeft') showPrevImage(); else if (e.key === 'ArrowRight') showNextImage(); else if (e.key === 'Escape') modal.style.display = 'none'; } });
   document.getElementById('copyLinkBtn')?.addEventListener('click', () => { navigator.clipboard.writeText("https://proshotpixel.electric"); alert("✨ Profile link copied ✨"); });
   document.getElementById('shareNowBtn')?.addEventListener('click', () => { if(navigator.share) navigator.share({title:'PROSHOT PIXEL', url:'https://proshotpixel.electric'}); else alert("Share this page!"); });
   document.getElementById('saveQrBtn')?.addEventListener('click', () => { const qr = document.querySelector('.qr-code-image'); if(qr) { const a = document.createElement('a'); a.href = qr.src; a.download = 'proshot_qr.png'; a.click(); } });
-  
-  let storedViews = localStorage.getItem('proshotPixelViews');
-  let views = storedViews ? parseInt(storedViews) : 3842;
-  views++;
-  localStorage.setItem('proshotPixelViews', views);
-  document.getElementById('viewCounterTop').innerText = views;
+  let storedViews = localStorage.getItem('proshotPixelViews'); let views = storedViews ? parseInt(storedViews) : 3842; views++; localStorage.setItem('proshotPixelViews', views); document.getElementById('viewCounterTop').innerText = views;
 </script>
 </body>
 </html>
