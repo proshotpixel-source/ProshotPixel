@@ -81,6 +81,64 @@
       border-left: 4px solid #00FFDE; margin-bottom: 18px; color: #00FFDE;
     }
     
+    /* Important Notes Section */
+    .important-notes {
+      background: rgba(5, 12, 28, 0.8);
+      border-radius: 28px;
+      padding: 20px;
+      margin: 24px 0;
+      border: 1px solid rgba(0,202,255,0.35);
+    }
+    .important-notes h3 {
+      color: #00FFDE;
+      font-size: 20px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .notes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .note-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,202,255,0.2);
+    }
+    .note-item:last-child {
+      border-bottom: none;
+    }
+    .note-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(0,202,255,0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #00CAFF;
+      flex-shrink: 0;
+    }
+    .note-content {
+      flex: 1;
+    }
+    .note-title {
+      font-weight: 700;
+      color: #00FFDE;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .note-text {
+      font-size: 12px;
+      color: #C0E0FF;
+      line-height: 1.4;
+    }
+    
     /* COLLAPSIBLE PANEL STYLES */
     .accordion-category {
       margin-bottom: 20px;
@@ -162,7 +220,6 @@
     .addon-box { background: rgba(0,0,0,0.4); border-radius: 20px; padding: 14px; margin-top: 12px; border-left: 3px solid #00CAFF; }
     .addon-box h5 { color: #00CAFF; margin-bottom: 8px; font-size: 14px; }
     .addon-list { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: #AAC9FF; }
-    /* NEW: per-package terms & conditions box */
     .package-terms-box { background: rgba(0,0,0,0.35); border-radius: 20px; padding: 14px; margin-top: 14px; border-left: 3px solid #00FFDE; }
     .package-terms-box h5 { color: #00FFDE; margin-bottom: 8px; font-size: 13px; display: flex; align-items: center; gap: 6px; }
     .package-terms-box ul { margin-left: 20px; font-size: 12px; color: #C8E4FF; }
@@ -499,11 +556,14 @@
   <div class="section-container" id="about-us-section">
     <h2 class="section-header">📖 ABOUT US 📖</h2>
     <div class="about-us-content">
-      <p>We specialize in capturing moments that last a lifetime. From professional portraits to maternity, newborn, pre-birthday, baby, model, and family shoots — we bring your stories to life through beautiful, timeless photography.</p>
-      <p>Our talented team of photographers is passionate about visual storytelling. Every frame we create reflects genuine emotions, unique personalities, and meaningful connections. With years of experience and a keen eye for detail, we strive to deliver exceptional results that go beyond expectations.</p>
-      <p>To make your experience seamless and complete, we also provide professional makeup and hairstyling services — ensuring you look and feel your best during your shoot.</p>
-      <p>Based in Pimple Saudagar, Pimpri, we proudly offer our services across Pune and nearby areas.</p>
-      <div class="why-choose-us"><h3>✨ Why Choose Us ✨</h3><ul><li>Expertise in Maternity, Baby, Newborn, Family, Model & Pre-Birthday Photography</li><li>Complete Client Satisfaction is our priority</li><li>Ethical and Transparent Business Practices</li><li>Strong Customer Relationships — We stay connected</li><li>Personalized Approach — We listen, we understand, and we provide the best solutions</li></ul></div>
+      <p>We specialize in capturing moments that last a lifetime.
+Through beautiful, timeless photography, we preserve your most precious memories.
+With over 500+ successful shoots, we bring experience and creativity to every session.
+From professional portraits to maternity, newborn, pre-birthday, baby, model, and family shoots — we cover it all.</p>
+      
+       <p>We bring your unique stories to life with passion and attention to detail. </p>
+      <p>Based in Pimpri, we proudly offer our services across Pune and nearby areas.</p>
+      <div class="why-choose-us"><h3>✨ Why Choose Us ✨</h3><ul><li>Expertise in Maternity, Baby, Newborn, Family, Model & Pre-Birthday Photography</li> <li>Personalized Approach — We listen, we understand, and we provide the best solutions</li></ul></div>
      <br> <p><strong>We believe photography is more than just pictures — it's about preserving memories, emotions, and stories that you'll cherish forever.</strong></p>
     </div>
   </div>
@@ -514,6 +574,80 @@
     
   </div>
 <div id="packages-container-accordion"></div>
+
+  <!-- IMPORTANT NOTES SECTION (Updated with 11 specific points) -->
+  <div class="important-notes"  id="terms-section">
+    <h3><i class="fas fa-circle-info"></i> Important Notes</h3>
+    <div class="notes-grid">
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-database"></i></div>
+        <div class="note-content">
+          <div class="note-text">Please download your raw and edited data within 8 days. We will not be responsible after data closure.</div>
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-rupee-sign"></i></div>
+        <div class="note-content">
+          <div class="note-text">Advance booking payment is needed, and the remaining payment should be cleared on the shoot day.</div>
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-shoe-prints"></i></div>
+        <div class="note-content">
+          <div class="note-text">Please carry clean shoes in your bag for use inside the studio only.</div>
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-gem"></i></div>
+        <div class="note-content">
+          <div class="note-text">Please carry suitable jewellery, as we provide only makeup and hairstyling.</div>
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-clock"></i></div>
+        <div class="note-content">
+          <div class="note-text">Clients are requested to be on time; a delay of 15–20 minutes is acceptable, but any further delay will result in reduced shoot time.</div>
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-utensils"></i></div>
+        <div class="note-content">
+          <div class="note-text">Soft drink and food is not allowed in studio & during shoot.</div>
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-child"></i></div>
+        <div class="note-content">
+          <div class="note-text">Please take care of your child during the shoot, and kindly do not mess with the beautiful sets.</div>
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <div class="note-content">
+          <div class="note-text">Raw data will be provided on the same day of the shoot, and edited photos will be delivered within 10 days after selection.</div>
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-users-slash"></i></div>
+        <div class="note-content">
+          <div class="note-text">Extra members are not allowed in the studio.</div>
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-bag-shopping"></i></div>
+        <div class="note-content">
+          <div class="note-text">Clients are requested to take care of their belongings during a shoot. No staff/photographer would be responsible for any loss.</div>
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-icon"><i class="fas fa-image"></i></div>
+        <div class="note-content">
+          <div class="note-text">Edited photos do not include background changes as we already provide premium sets; only one photo can be edited with a background change or AI editing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- DRESSES SECTION -->
   <div class="section-container" id="dresses-section">
     <h2 class="section-header">👗 OUR DRESS COLLECTION 👗</h2>
@@ -846,20 +980,20 @@ const categoryGalleries = {
   };
   const categoriesData = [
     { id: "maternity", title: "🤰 Maternity Photoshoot", icon: "fas fa-mother", packages: [
-      { name: "Standard (Indoor Photoshoot)", price: "₹3,000", duration: "<strong>⏱️ Session Duration</strong> :<strong> 1 Hour </strong>of Professional Photography", outfit: "<strong>👗 Outfits </strong>: <strong>1 Premium Western Gown</strong> Curated & Provided by Us", images: "<strong>10 </strong>High-End Retouched Soft Copies only", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","Premium Western Gowns Available", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"] , addons: [ "➕ Extra Mom Outfit: ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"]},
-      { name: "Basic (Indoor Photoshoot)", price: "₹5,200", duration: "<strong>⏱️ Session Duration </strong>: <strong> 2 Hour </strong> Hours of Professional Photography" , outfit: "<strong>👗 Outfits : </strong>2 Changes Allowed <br> <ul style='margin-left: 30px; margin-top: 2px; '>Choose any of following options:<li>Choose both gowns from our collection</li> <li> 1 of your outfit + 1 gown from us</li> <li> both outfits from your side</li></ul>", images: "<strong>20 </strong> High-End Retouched Soft Copies only", features: ["Makeup & Hairstyling Included for Mom-to-Be", "Premium Western Gowns Available", "High-Resolution Soft Copies", "Guided Posing & Styling Assistance"], addons: [ "➕ Extra Mom Outfit: ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] },
-      { name: "Premium (Indoor Photoshoot)", price: "₹7,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 3 Hour </strong>", outfit: "<strong>👗 Outfits : </strong>3 Changes (2 Premium Western Gowns from Us + 1 Outfit from Your Side)", images: "<strong>25 </strong> High-End Retouched Soft Copies only <br>📖 Premium Photobook Album with <strong>20 </strong> Edited Photos (Your Choice)", features: ["Makeup & Hairstyling Included for Mom-to-Be", "Premium Photobook", "Premium Western Gowns Available","High-Resolution Soft Copies", "Guided Posing & Styling Assistance"], addons: [ "➕ Extra Mom Outfit: ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] }
+      { name: "Standard (Indoor Photoshoot)", price: "₹3,000", duration: "<strong>⏱️ Session Duration</strong> :<strong> 1 Hour </strong>of Professional Photography", outfit: "<strong>👗 Outfits </strong>: <strong>1 Premium Western Gown</strong> Curated & Provided by Us", images: "<strong>10 </strong>High-End Retouched Soft Copies only", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","Premium Western Gowns Available", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"] , addons: [ "➕ Extra Mom Outfit: ₹800", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"]},
+      { name: "Basic (Indoor Photoshoot)", price: "₹5,200", duration: "<strong>⏱️ Session Duration </strong>: <strong> 2 Hour </strong> Hours of Professional Photography" , outfit: "<strong>👗 Outfits : </strong>2 Changes Allowed <br> <ul style='margin-left: 30px; margin-top: 2px; '>Choose any of following options:<li>Choose both gowns from our collection</li> <li> 1 of your outfit + 1 gown from us</li> <li> both outfits from your side</li></ul>", images: "<strong>20 </strong> High-End Retouched Soft Copies only", features: ["Makeup & Hairstyling Included for Mom-to-Be", "Premium Western Gowns Available", "High-Resolution Soft Copies", "Guided Posing & Styling Assistance"], addons: [ "➕ Extra Mom Outfit: ₹800", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] },
+      { name: "Premium (Indoor Photoshoot)", price: "₹7,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 3 Hour </strong>", outfit: "<strong>👗 Outfits : </strong>3 Changes (2 Premium Western Gowns from Us + 1 Outfit from Your Side)", images: "<strong>25 </strong> High-End Retouched Soft Copies only <br>📖 Premium Photobook Album with <strong>20 </strong> Edited Photos (Your Choice)", features: ["Makeup & Hairstyling Included for Mom-to-Be", "Premium Photobook", "Premium Western Gowns Available","High-Resolution Soft Copies", "Guided Posing & Styling Assistance"], addons: [ "➕ Extra Mom Outfit: ₹800", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle (Mom-Tobe): ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] }
     ]},
     { id: "newborn", title: " Newborn Photoshoot", icon: "fas fa-baby", packages: [
-      { name: "Baby Bliss Package", price: "₹6,000", duration: "<strong>⏱️ Session Duration : </strong><strong> 1 Hour </strong>of Professional Photography", outfit: "✅ <strong>Included</strong> : All Props, Outfits & Wraps", images: "<strong>15 </strong> High-End Retouched Soft Copies", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","2 Premium Themed Setups", "Family Photos Included", "Guided Posing & Styling Assistance", "All props & wraps provided"], addons: ["➕ Home Visit: ₹2,000", "➕ Mom Outfit: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] }
+      { name: "Baby Bliss Package", price: "₹6,000", duration: "<strong>⏱️ Session Duration : </strong><strong> 1 Hour </strong>of Professional Photography", outfit: "✅ <strong>Included</strong> : All Props, Outfits & Wraps", images: "<strong>15 </strong> High-End Retouched Soft Copies", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","2 Premium Themed Setups", "Family Photos Included", "Guided Posing & Styling Assistance", "All props & wraps provided"], addons: ["➕ Home Visit: ₹2,000", "➕ Mom Outfit: ₹800", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] }
     ]},
     { id: "family", title: " Family Photoshoot", icon: "fas fa-users", packages: [
-      { name: "Family Photoshoot Package", price: "₹4,000", duration: "️<strong>⏱️ Session Duration </strong>:<strong> 1 Hour </strong>of Professional Photography", outfit: "<strong>👗 Outfits </strong>: <strong>2</strong> Changes Allowed", images: "<strong>20 </strong> High-End Retouched Soft Copies only", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","Exclusive Family Photoshoot Experience", "Guided Posing & Styling Assistance", "High-Resolution Soft Copies"], addons: [ "➕ Extra Outfit(Gown only): ₹600", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle: ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] }
+      { name: "Family Photoshoot Package", price: "₹4,000", duration: "️<strong>⏱️ Session Duration </strong>:<strong> 1 Hour </strong>of Professional Photography", outfit: "<strong>👗 Outfits </strong>: <strong>2</strong> Changes Allowed", images: "<strong>20 </strong> High-End Retouched Soft Copies only", features: ["Make-up,Hairstyle & Reel are <strong>Not</strong> Included","Exclusive Family Photoshoot Experience", "Guided Posing & Styling Assistance", "High-Resolution Soft Copies"], addons: [ "➕ Extra Outfit(Gown only): ₹800", "➕ Hairstyle Only: ₹600", "➕ Makeup & Hairstyle: ₹1,200", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] }
     ]},
     { id: "prebirthday", title: " Pre-Birthday Photoshoot", icon: "fas fa-birthday-cake", packages: [
-      { name: "Sweet Start (Indoor)", price: "₹4,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 1 Hour </strong>of Professional Photography", outfit: "🛠 1 Themed Setup", images: "<strong>15</strong> High-End Retouched Images", features: ["Make-up,Hairstyle,Gown for Mom & Reel are <strong>Not</strong> Included","Baby Solo + Family Photos", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"], addons: [ "➕ Mom Outfit: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] },
-      { name: "Little Star (Indoor)", price: "₹5,500", duration: "<strong>⏱️ Session Duration </strong>: <strong> 1 Hour </strong>of Professional Photography", outfit: "🛠 2–3 Themed Setups",  images: "<strong>20</strong> High-End Retouched Images", features: ["Make-up,Hairstyle & Gown for Mom  are <strong>Not</strong> Included","Baby Solo + Family Photos + 1 Cinematic Reel","Themed Setups", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"] , addons: [ "➕ Mom Outfit: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Saree Drapping: ₹200"]},
-      { name: "Grand Celebration (Indoor + Outdoor)", price: "₹7,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 3 Hour </strong> of Professional Photography", outfit: "🛠 Setups (2 Indoor + 1 Outdoor)",  images: "<strong>30</strong> High-End Retouched Images", features: ["Make-up,Hairstyle & Gown for Mom are <strong>Not</strong> Included","Baby Solo + Family Photos + 1 Cinematic Reel","Themed Setups", "High-Resolution Soft Copies","Indoor + Outdoor Garden Shoot",   "Guided Posing & Styling Assistance"], addons: ["➕ Mom Gown: ₹600", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Saree Drapping: ₹200", "➕ Hairstyle Only: ₹600", "📌 Outdoor Garden Charges: ₹300–500 approx. (by client)", "🎁 Complimentary for Previous Clients: Mom Gown / Family Reel / Hairstyle"] }
+      { name: "Sweet Start (Indoor)", price: "₹4,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 1 Hour </strong>of Professional Photography", outfit: "🛠 1 Themed Setup", images: "<strong>15</strong> High-End Retouched Images", features: ["Make-up,Hairstyle,Gown for Mom & Reel are <strong>Not</strong> Included","Baby Solo + Family Photos", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"], addons: [ "➕ Mom Outfit: ₹800", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Reel: ₹1000", "➕ Saree Drapping: ₹200"] },
+      { name: "Little Star (Indoor)", price: "₹5,500", duration: "<strong>⏱️ Session Duration </strong>: <strong> 1 Hour </strong>of Professional Photography", outfit: "🛠 2–3 Themed Setups",  images: "<strong>20</strong> High-End Retouched Images", features: ["Make-up,Hairstyle & Gown for Mom  are <strong>Not</strong> Included","Baby Solo + Family Photos + 1 Reel","Themed Setups", "High-Resolution Soft Copies",  "Guided Posing & Styling Assistance"] , addons: [ "➕ Mom Outfit: ₹800", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Hairstyle Only: ₹600", "➕ Saree Drapping: ₹200"]},
+      { name: "Grand Celebration (Indoor + Outdoor)", price: "₹7,000", duration: "<strong>⏱️ Session Duration </strong>: <strong> 3 Hour </strong> of Professional Photography", outfit: "🛠 Setups (2 Indoor + 1 Outdoor)",  images: "<strong>30</strong> High-End Retouched Images", features: ["Make-up,Hairstyle & Gown for Mom are <strong>Not</strong> Included","Baby Solo + Family Photos + 1 Reel","Themed Setups", "High-Resolution Soft Copies","Indoor + Outdoor Garden Shoot",   "Guided Posing & Styling Assistance"], addons: ["➕ Mom Gown: ₹800", "➕ Makeup & Hairstyle (Mom): ₹1,200", "➕ Saree Drapping: ₹200", "➕ Hairstyle Only: ₹600", "📌 Outdoor Garden Charges: ₹300–500 approx. (by client)", "🎁 Complimentary for Previous Clients: Mom Gown / Family Reel / Hairstyle"] }
     ]}
   ];
 
@@ -878,7 +1012,7 @@ const categoryGalleries = {
         let featuresHtml = `<ul class="feature-list">${pkg.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
         let addonHtml = pkg.addons ? `<div class="addon-box"><h5>➕ Add-Ons (Extra)</h5><div class="addon-list">${pkg.addons.map(a => `<span>${a}</span>`).join('  ')}</div></div>` : '';
         // NEW: per-package terms & conditions
-        const pkgTermsHtml = `<div class="package-terms-box"><h5><i class="fas fa-file-contract"></i> Package Terms</h5><ul><li>A 30% advance payment is required to confirm your booking. The remaining amount must be paid immediately after the photoshoot.</li><li>All raw copies will be shared on the same day via Cloud or Pen Drive, upon completion of the remaining payment.</li><li>Final edited images will be delivered within 10 days after photo selection.</li><li>All required props will be provided by us.</li><li>Some edited photographs may include our official watermark.</li></ul></div>`;
+        const pkgTermsHtml = `<div class="important-notes"><a href="#terms-section" class="footer-menu-link"><h3>Terms & Conditions</h3></a></div>`;
         card.innerHTML = `
           <h3 class="card-title">✨ ${pkg.name}</h3>
           <div class="product-description"><strong>${pkg.duration}</strong><br><strong>${pkg.outfit}</strong><br><strong>🖼️ Deliverables :</strong> ${pkg.images}</div>
