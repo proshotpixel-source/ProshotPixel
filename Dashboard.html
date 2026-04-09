@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ProshotPixel Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+    .card {
+      margin: 20px;
+      padding: 20px;
+      border-radius: 15px;
+      background: #1e1e1e;
+      display: inline-block;
+    }
+    canvas {
+      max-width: 600px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📊 ProshotPixel Analytics</h1>
+
+<div class="card">
+  <h2>Total Visitors</h2>
+  <div id="total">Loading...</div>
+</div>
+
+<div class="card">
+  <h2>Today Visitors</h2>
+  <div id="today">Loading...</div>
+</div>
+
+<canvas id="chart"></canvas>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCbuJesRJz858WpnboAZu5TVgyJ7li8Q4A",
+  authDomain: "proshotpixel-fa9d3.firebaseapp.com",
+  projectId: "proshotpixel-fa9d3",
+  databaseURL: "https://proshotpixel-fa9d3-default-rtdb.firebaseio.com"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// TOTAL
+onValue(ref(db, "visits"), snap => {
+  document.getElementById("total").innerText = snap.val();
+});
+
+// TODAY
+const today = new Date().toISOString().split("T")[0];
+onValue(ref(db, "daily/" + today), snap => {
+  document.getElementById("today").innerText = snap.val() || 0;
+});
+
+// GRAPH
+onValue(ref(db, "daily"), snap => {
+  const data = snap.val() || {};
+
+  const labels = Object.keys(data);
+  const values = Object.values(data);
+
+  new Chart(document.getElementById("chart"), {
+    type: "line",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Daily Visitors",
+        data: values
+      }]
+    }
+  });
+});
+</script>
+
+</body>
+</html>
