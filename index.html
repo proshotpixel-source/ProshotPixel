@@ -591,9 +591,8 @@
 </div>
 
 <script type="module">
- import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js"; 
+ 
 
-import { getDatabase, ref, get, set, update } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
   // Sample reviews data
   const sampleReviews = [
     {
@@ -937,6 +936,8 @@ const categoryGalleries = {
   
   
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCbuJesRJz858WpnboAZu5TVgyJ7li8Q4A",
@@ -952,13 +953,25 @@ const today = new Date().toISOString().split("T")[0];
 const visitsRef = ref(db, "visits");
 const dailyRef = ref(db, "daily/" + today);
 
+// 👇 SHOW TOTAL VISITORS FUNCTION
+function showVisitors() {
+  get(visitsRef).then((snapshot) => {
+    let count = snapshot.exists() ? snapshot.val() : 0;
+    document.getElementById("counter").innerText = count;
+  });
+}
+
 // UNIQUE visitor check
 if (!localStorage.getItem("visited")) {
 
   // Total visits
   get(visitsRef).then(snap => {
     let count = snap.exists() ? snap.val() : 0;
-    set(visitsRef, count + 1);
+    count++;
+    set(visitsRef, count);
+
+    // update UI after increment
+    document.getElementById("totalVisitors").innerText = count;
   });
 
   // Daily visits
@@ -968,6 +981,10 @@ if (!localStorage.getItem("visited")) {
   });
 
   localStorage.setItem("visited", "true");
+
+} else {
+  // Just show existing count
+  showVisitors();
 }
 </script>
  
