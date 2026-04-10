@@ -468,6 +468,82 @@
     .gpay-icon { color: #00AA7E; font-size: 28px; width: 44px; text-align: center; }
     .payment-text { color: #C0E0FF; font-size: 15px; font-weight: 500; flex: 1; }
     .payment-number { color: #00FFDE; font-weight: 700; font-size: 16px; }
+	
+	
+	 /* DRESSES SECTION - ACCORDION + 3 COLUMN GRID */
+    .dress-accordion {
+      margin: 20px 0;
+      border-radius: 28px;
+      background: rgba(5, 12, 28, 0.6);
+      border: 1px solid rgba(0, 202, 255, 0.45);
+      overflow: hidden;
+    }
+	 .dress-accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      cursor: pointer;
+      background: linear-gradient(105deg, rgba(67,0,255,0.2), rgba(0,202,255,0.1));
+    }
+    .dress-accordion-header h3 {
+      font-size: 22px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00CAFF, #00FFDE);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .dress-accordion-header i:first-child { font-size: 28px; color: #00FFDE; }
+    .dress-accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      padding: 0 20px;
+    }
+    .dress-accordion-content.open {
+      max-height: 100%;
+      padding: 8px 20px 28px;
+    }
+    /* 3-COLUMN GRID FOR DRESSES */
+    .dresses-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 20px 0 24px;
+    }
+    .dress-card {
+      background: rgba(10, 20, 40, 0.7);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(0,202,255,0.4);
+      transition: all 0.3s;
+    }
+    .dress-card:hover {
+      transform: translateY(-5px);
+      border-color: #00FFDE;
+      box-shadow: 0 8px 20px rgba(0,202,255,0.25);
+    }
+    .dress-image {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    .dress-info {
+      padding: 10px 6px;
+      text-align: center;
+    }
+    .dress-color {
+      font-size: 12px;
+      font-weight: 600;
+      color: #00FFDE;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
     
     /* Video Gallery */
     .video-gallery-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
@@ -648,12 +724,19 @@ From professional portraits to maternity, newborn, pre-birthday, baby, model, an
     </div>
   </div>
 
-  <!-- DRESSES SECTION -->
-  <div class="section-container" id="dresses-section">
-    <h2 class="section-header">👗 OUR DRESS COLLECTION 👗</h2>
-    <div class="dresses-gallery-grid" id="dressesGallery"></div>
-    <div style="text-align: center; margin-top: 20px;">
-      <button class="download-pdf-btn" id="downloadDressPdfBtn"><i class="fas fa-file-pdf"></i> Download Dress PDF Catalog</button>
+   <!-- DRESS COLLECTION - ACCORDION + 3 COLUMN GRID -->
+  <div id="dresses-section">
+    <div class="dress-accordion">
+      <div class="dress-accordion-header" id="dressAccordionHeader">
+        <h3><i class="fas fa-tshirt"></i> 👗 OUR DRESS COLLECTION 👗</h3>
+        <div class="accordion-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+      </div>
+      <div class="dress-accordion-content" id="dressAccordionContent">
+        <div class="dresses-gallery-grid" id="dressesGallery"></div>
+        <div style="text-align: center; margin-top: 12px;">
+          <a class="download-pdf-btn" id="downloadDressPdfBtn" href="https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Proshot Pixel Outfits.pdf"><i class="fas fa-file-pdf"></i> Download Dress PDF Catalog</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -671,11 +754,11 @@ From professional portraits to maternity, newborn, pre-birthday, baby, model, an
   
   
 
-  <!-- Video Gallery Section -->
+  <!-- Video Gallery Section 
   <div class="section-container" id="video-gallery-section">
     <h2 class="section-header">🎬 VIDEO GALLERY 🎬</h2>
     <div class="video-gallery-grid" id="videoGalleryGrid"></div>
-  </div>
+  </div>-->
   
    <!-- REVIEWS SECTION (New) -->
   <div class="section-container" id="reviews-section">
@@ -714,7 +797,7 @@ From professional portraits to maternity, newborn, pre-birthday, baby, model, an
 </div> <div class="copyright-wrapper">© 2026 PROSHOT PIXEL — Maternity · Newborn · Family · Pre-Birthday</div>
 </div>
 
-<div class="footer"><ul class="footer-menu"><li><a href="#home-section" class="footer-menu-link"><i class="fas fa-home footer-menu-icon"></i><span>HOME</span></a></li><li><a href="#about-us-section" class="footer-menu-link"><i class="fas fa-info-circle footer-menu-icon"></i><span>ABOUT</span></a></li><li><a href="#packages-section" class="footer-menu-link"><i class="fas fa-box-open footer-menu-icon"></i><span>PACKAGES</span></a></li><li><a href="#dresses-section" class="footer-menu-link"><i class="fas fa-tshirt footer-menu-icon"></i><span>DRESSES</span></a></li><li><a href="#reviews-section" class="footer-menu-link"><i class="fas fa-star footer-menu-icon"></i><span>REVIEWS</span></a></li><li><a href="#video-gallery-section" class="footer-menu-link"><i class="fas fa-video footer-menu-icon"></i><span>VIDEOS</span></a></li><li><a href="#links-section" class="footer-menu-link"><i class="fas fa-link footer-menu-icon"></i><span>LINKS</span></a></li><li><a href="#share-section" class="footer-menu-link"><i class="fas fa-share-alt footer-menu-icon"></i><span>SHARE</span></a></li></ul></div>
+<div class="footer"><ul class="footer-menu"><li><a href="#home-section" class="footer-menu-link"><i class="fas fa-home footer-menu-icon"></i><span>HOME</span></a></li><li><a href="#about-us-section" class="footer-menu-link"><i class="fas fa-info-circle footer-menu-icon"></i><span>ABOUT</span></a></li><li><a href="#packages-section" class="footer-menu-link"><i class="fas fa-box-open footer-menu-icon"></i><span>PACKAGES</span></a></li><li><a href="#dresses-section" class="footer-menu-link"><i class="fas fa-tshirt footer-menu-icon"></i><span>DRESSES</span></a></li><li><a href="#reviews-section" class="footer-menu-link"><i class="fas fa-star footer-menu-icon"></i><span>REVIEWS</span></a></li> <!--<li><a href="#video-gallery-section" class="footer-menu-link"><i class="fas fa-video footer-menu-icon"></i><span>VIDEOS</span></a></li>--><li><a href="#links-section" class="footer-menu-link"><i class="fas fa-link footer-menu-icon"></i><span>LINKS</span></a></li><li><a href="#share-section" class="footer-menu-link"><i class="fas fa-share-alt footer-menu-icon"></i><span>SHARE</span></a></li></ul></div>
 
 <div id="imageModal" class="modal">
   <span class="close">&times;</span>
@@ -772,10 +855,52 @@ From professional portraits to maternity, newborn, pre-birthday, baby, model, an
   }
 
   const dressImages = [
-    { url: "https://instagram.fpnq7-8.fna.fbcdn.net/v/t51.82787-15/652085476_17879358489529268_3029885741414311064_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=Mzg1NDE2Nzg0MTkzOTY2NTc4NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=Zl1AZXzJRQgQ7kNvwFBF1H3&_nc_oc=AdptUDdj1BwE901FB5K1S6lwRrr6FflDMHjDl48ZWrF0nyeGZeMruxyBx0VzrwaSHWIfektucxSpmY228pIFKggO&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=instagram.fpnq7-8.fna&_nc_gid=kOMlPUIszm1iyP7WQKzskg&_nc_ss=7a32e&oh=00_AfxqIy8H0b3gEvHw_vYyfouSfCX2BIhoqEsBTk6S74-U7A&oe=69D1C762", color: "Elegant Ivory Gown" },
-    { url: "https://instagram.fpnq7-5.fna.fbcdn.net/v/t51.82787-15/651428119_17879358114529268_6110855990635002368_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzg1NDE2NjkxMzgyNDA5NDYwMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=gG-n0s1k9eEQ7kNvwGIVDge&_nc_oc=Adoy6whhqdV48lCCiEgDveriX_Z0v9ypgKg1LoBIKCn5-jFUQx5tx7l_FwDmwpKOzf23fm3Ej9yc-SvuhtQTeG32&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=instagram.fpnq7-5.fna&_nc_gid=kOMlPUIszm1iyP7WQKzskg&_nc_ss=7a32e&oh=00_AfyT2HLO-DkVQxnpCSGzwR-UdWST0MzUugdlOvDnete7Xw&oe=69D1E38F", color: "Blush Pink Perfection" },
-    { url: "https://instagram.fpnq7-8.fna.fbcdn.net/v/t51.82787-15/626256361_17982277868952922_4651993894953167195_n.webp?_nc_cat=100&ig_cache_key=MzgyNjMzOTcyNDE1MTg5MzAxNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0Mzl4OTU5LnNkci5DMyJ9&_nc_ohc=9PhZYRvZmcUQ7kNvwEoCW5_&_nc_oc=AdqyMplT96H04zqxRn1er3sbZtuSMBpAXKW6wvGtXzwUsQgVY5IYQfKiN8LR1-NraYfUKuKgcCbQwgRsXM977EuR&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=instagram.fpnq7-8.fna&_nc_gid=8SafPo0Zg2d0ecl6C5WG1g&_nc_ss=7a32e&oh=00_AfxM6ImWvP9FFgkR7G8AFOf0cgvbJCljdYGgWzvqtJm-aQ&oe=69D1DFB8", color: "Royal Blue Elegance" }
-  ];
+  {url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Storm Blue (1).jpg", color: "Storm Blue" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Storm Blue (2).jpg", color: "Storm Blue" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Mild Purple (1).jpg", color: "Mild Purple" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Mild Purple (2).jpg", color: "Mild Purple" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/brown 2.jpeg", color: "Brown" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/brown 3.jpeg", color: "Brown" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/brown.jpg", color: "Brown" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/green 2.jpg", color: "Fairy Green" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/green 3.jpg", color: "Fairy Green" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Rich Violet (1).jpg", color: "Rich Violet" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Rich Violet (2).JPG", color: "Rich Violet" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Rich Violet (3).jpg", color: "Rich Violet" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/red 2.jpg", color: "Red" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/red.jpg", color: "Red" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Lavender outdoor.jpg", color: "Lavender" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/lavender.jpg", color: "Lavender" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/baby pink1.jpg", color: "Baby Pink" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/baby pink2.jpg", color: "Baby Pink" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/yellow 2.jpg", color: "Yellow" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/yellow.jpg", color: "Yellow" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/red bodycon 1.JPG", color: "Red Bodycon" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/red bodycon 2.jpg", color: "Red Bodycon" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/black bodycon.jpg", color: "Black" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/black longtail.jpg", color: "Black" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/black short.jpg", color: "Black" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/black.JPG", color: "Black" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/blue 1.jpg", color: "Blue" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/blue 2.jpg", color: "Blue" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/wine 1.jpg", color: "Wine" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/wine 2.JPG", color: "Wine" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/rose wine 1.jpg", color: "Rose Wine" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/rose wine 2.jpg", color: "Rose Wine" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/white 2.jpg", color: "White" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/white 3.jpg", color: "White" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Royal Blue 2.jpg", color: "Royal Blue" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/royal blue.jpg", color: "Royal Blue" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Lemon Yellow (1).jpg", color: "Lemon Yellow" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Lemon Yellow (2).jpg", color: "Lemon Yellow" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Lemon Yellow (3).jpg", color: "Lemon Yellow" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/light blue.jpg", color: "light blue" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/orange 1.jpg", color: "Orange" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/orange 2.JPG", color: "Orange" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/orange.jpg", color: "Orange" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Bottle Green (1).jpg", color: "Bottle Green" },
+{url: "https://raw.githubusercontent.com/proshotpixel-source/ProshotPixel/refs/heads/main/dress/Bottle Green (2).jpg", color: "Bottle Green" }
+];
   let allGalleryImages = [];
   let currentImageIndex = 0;
 
@@ -1053,6 +1178,18 @@ const categoryGalleries = {
   buildDressesGallery();
   buildVideoGallery();
   renderReviews();
+  
+   // Dress Accordion Logic
+  const dressHeader = document.getElementById('dressAccordionHeader');
+  const dressContent = document.getElementById('dressAccordionContent');
+  const dressIcon = dressHeader.querySelector('.accordion-toggle-icon i');
+  dressHeader.addEventListener('click', () => {
+    const isOpen = dressContent.classList.contains('open');
+    dressContent.classList.toggle('open');
+    dressIcon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+  });
+  dressContent.classList.add('open'); // default open
+  dressIcon.style.transform = 'rotate(180deg)';
 
   document.getElementById('downloadDressPdfBtn')?.addEventListener('click', () => { const link = document.createElement('a'); link.href = './pdf/Proshot-Pixel-Outfits.pdf'; link.download = 'Proshot-Pixel-Outfits.pdf'; link.click(); });
   function showPrevImage() { if (allGalleryImages.length) { currentImageIndex = (currentImageIndex - 1 + allGalleryImages.length) % allGalleryImages.length; document.getElementById('modalImg').src = allGalleryImages[currentImageIndex].url; const dress = dressImages.find(d => d.url === allGalleryImages[currentImageIndex].url); document.getElementById('modalCaption').innerText = dress ? dress.color : ''; } }
